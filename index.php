@@ -17,7 +17,7 @@ $s3 = new S3Client([
     ],
 ]);
 
-$bucketName = 'somosvfit';
+$bucketName = $_ENV['S3_BUCKET_NAME'];
 
 try {
     $videoExtensions = ['mp4', 'mov', 'avi', 'mkv', 'flv', 'wmv'];
@@ -51,6 +51,7 @@ try {
     } while ($continuationToken);
 
     echo "Total de videos encontrados: " . count($videoFiles) . "\n";
+    
     exportToTxt($videoFiles);
     dd($videoFiles);
 } catch (Aws\Exception\AwsException $e) {
