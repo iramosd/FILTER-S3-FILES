@@ -1,0 +1,17 @@
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: "sh -c '/usr/local/bin/php-setup-project.sh'"
+    ports:
+      - '8000:8000'
+    volumes:
+      - '.:/var/www/html:z'
+networks:
+  default:
+    name: filter_s3_files_network
+    
+volumes:
+  mysql_data:
+    driver: local

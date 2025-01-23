@@ -1,0 +1,14 @@
+{
+    "name": "iramosd/s3_filter",
+    "description": "S3 Filter",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {
+        "aws/aws-sdk-php": "^3.338",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^7.2"
+    }
+}
